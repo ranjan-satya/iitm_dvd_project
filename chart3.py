@@ -130,7 +130,7 @@ layout = html.Div([
     html.H1("Correlation of Voter Turnout with Ease of Voting", className='content-title'),
 
     html.Div(className='dropdown-wrapper', children=[
-        html.P(className='contnet-text', children='To be a good member of employee community, Voting in Union Elections is',
+        html.P(className='content-text', children='To be a good member of employee community, Voting in Union Elections is',
             style={'margin-right': '10px'}),
         dcc.Dropdown(
             id='select_importance',

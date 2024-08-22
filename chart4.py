@@ -94,7 +94,7 @@ def create_fig_for_perception(df_perception):
             gridwidth=1,  # Set the grid line width
         ),
         height=500, 
-        width=1300, 
+        width=1200, 
         plot_bgcolor='rgba(255, 255, 255, 0)',  # Set plot background color to black
         paper_bgcolor='rgba(0, 0, 0, 0)',  # Set paper background color to black
         font=dict(color='white', family='Montserrat, sans-serif')  # Set text color to white
@@ -108,7 +108,7 @@ layout = html.Div([
 
     html.H1("Correlation of Voter Turnout with Perception about leaders", className="content-title"),
     html.Div(className='dropdown-wrapper', children=[
-            html.P(className='contnet-text', children='Education: ',
+            html.P(className='content-text', children='Education: ',
                 style={'margin-right': '10px'}),
             dcc.Dropdown(
                 id='select_education',
@@ -127,7 +127,7 @@ layout = html.Div([
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
-            html.P(className='contnet-text', children='Race: ',
+            html.P(className='content-text', children='Race: ',
                 style={'margin-right': '10px', 'margin-left': '20px'}),
             dcc.Dropdown(
                 id='select_race',
@@ -148,7 +148,7 @@ layout = html.Div([
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
-            html.P(className='contnet-text', children='Gender: ',
+            html.P(className='content-text', children='Gender: ',
                 style={'margin-right': '10px', 'margin-left': '20px'}),
             dcc.Dropdown(
                 id='select_gender',
@@ -167,7 +167,7 @@ layout = html.Div([
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
-            html.P(className='contnet-text', children='Income Category: ',
+            html.P(className='content-text', children='Income Category: ',
                 style={'margin-right': '10px', 'margin-left': '20px'}),
             dcc.Dropdown(
                 id='select_income',

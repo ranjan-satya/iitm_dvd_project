@@ -27,7 +27,7 @@ app.layout = html.Div(className='body', children=[
                 html.Div(className='index-item', id='link-dataset', children='- Dataset'),
                 html.Div(className='index-item', id='link-chart1', children='- Chart 1'),
                 html.Div(className='index-item', id='link-chart2', children='- Chart 2'),
-                html.Div(className='index-item', id='link-chart3', children='- Importance & Ease of Voting'),
+                html.Div(className='index-item', id='link-chart3', children='- Ease of Voting'),
                 html.Div(className='index-item', id='link-chart4', children="- Leaders' Perception"),
                 html.Div(className='index-item', id='link-chart5', children='- Chart 5'),
                 html.Div(className='index-item', id='link-chart6', children='- Chart 6'),
@@ -105,9 +105,9 @@ def display_page(introduction, dataset, chart1, chart2, chart3, chart4, chart5, 
             html.Div([
                 html.H2(className='content-title', children='Introduction'),
                 html.H3(className='content-sub-heading', children='Project Title'),
-                html.P(className='contnet-text', children='Boosting Voter Turnout: Insights from Our Worker Community'),
+                html.P(className='content-text', children='Boosting Voter Turnout: Insights from Our Worker Community'),
                 html.H3(className='content-sub-heading', children='Overview'),
-                html.P(className='contnet-text', children='The union leaders have noticed a troubling trend over the past few election terms: A significant number of workers are not participating in the union elections. This lack of participation has raised concerns about whether the union truly represents the interests and needs of all its members. To address this issue, the union committee has conducted a comprehensive survey to understand the reasons behind the low voter turnout.')
+                html.P(className='content-text', children='The union leaders have noticed a troubling trend over the past few election terms: A significant number of workers are not participating in the union elections. This lack of participation has raised concerns about whether the union truly represents the interests and needs of all its members. To address this issue, the union committee has conducted a comprehensive survey to understand the reasons behind the low voter turnout.')
             ]),
             active_style,  # Active style for Introduction
             *[default_style] * 8  # Default styles for all other links
@@ -124,9 +124,9 @@ def display_page(introduction, dataset, chart1, chart2, chart3, chart4, chart5, 
             html.Div([
                 html.H2(className='content-title', children='Introduction'),
                 html.H3(className='content-sub-heading', children='Project Title'),
-                html.P(className='contnet-text', children='Boosting Voter Turnout: Insights from Our Worker Community'),
+                html.P(className='content-text', children='Boosting Voter Turnout: Insights from Our Worker Community'),
                 html.H3(className='content-sub-heading', children='Overview'),
-                html.P(className='contnet-text', children='The union leaders have noticed a troubling trend over the past few election terms: A significant number of workers are not participating in the union elections. This lack of participation has raised concerns about whether the union truly represents the interests and needs of all its members. To address this issue, the union committee has conducted a comprehensive survey to understand the reasons behind the low voter turnout.')
+                html.P(className='content-text', children='The union leaders have noticed a troubling trend over the past few election terms: A significant number of workers are not participating in the union elections. This lack of participation has raised concerns about whether the union truly represents the interests and needs of all its members. To address this issue, the union committee has conducted a comprehensive survey to understand the reasons behind the low voter turnout.')
             ]),
             *styles
         )

@@ -33,14 +33,14 @@ body {
 }
 
 .heading {
-    color: #fffc;
+    color: rgb(255, 255, 255);
     text-align: center;
     margin-top: 0;
     margin-bottom: 0;
     padding: 0% 3%;
     font-family: Montserrat, sans-serif;
     font-size: 35px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .content-wrapper {
@@ -76,18 +76,18 @@ body {
 }
 
 .index-title {
-    color: #fffcfccc;
+    color: #fffcfc;
     text-align: center;
     margin-bottom: 10px;
     padding-top: 4%;
     padding-bottom: 4%;
     font-family: Montserrat, sans-serif;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 35px;
+    font-weight: 400;
 }
 
 .index-item {
-    color: #ffffffe6;
+    color: #ffffff;
     cursor: pointer;
     border: 1px #000;
     border-bottom-color: #0000;
@@ -95,8 +95,8 @@ body {
     margin-right: 10%;
     padding: 4% 2%;
     font-family: Montserrat, sans-serif;
-    font-size: 16px;
-    font-weight: 200;
+    font-size: 18px;
+    font-weight: 300;
     transition: all .2s;
 }
 
@@ -121,19 +121,19 @@ body {
 }
 
 .team-title {
-    color: #fffcfccc;
+    color: #fffcfc;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 0;
     padding-top: 1%;
     padding-bottom: 2%;
     font-family: Montserrat, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
 }
 
 .team-member {
-    color: #ffffffe6;
+    color: #ffffff;
     cursor: pointer;
     border: 1px #000;
     border-bottom-color: #0000;
@@ -142,19 +142,19 @@ body {
     padding: 4% 2%;
     font-family: Montserrat, sans-serif;
     font-size: 20px;
-    font-weight: 200;
+    font-weight:300;
     transition: all .2s;
 }
 
 
 .team-details {
-    color: #fffffff2;
+    color: #ffffff;
     margin-left: 10%;
     margin-right: 10%;
     padding: 5px 2%;
     font-family: Montserrat, sans-serif;
-    font-size: 15px;
-    font-weight: 200;
+    font-size: 17px;
+    font-weight: 300;
 }
 
 .team-members {
@@ -170,27 +170,27 @@ body {
 }
 
 .content-title {
-    color: #fffc;
+    color: rgb(255, 255, 255);
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
     font-family: Montserrat, sans-serif;
-    font-weight: 300;
-    font-size: 30px;
+    font-weight: 500;
+    font-size: 35px;
 }
 
 .content-sub-heading {
-    color: #fffc;
+    color: rgb(255, 255, 255);
     font-family: Montserrat, sans-serif;
-    font-weight: 300;
-    font-size: 25px;
+    font-weight: 450;
+    font-size: 27px;
 }
 
-.contnet-text {
-    color: #fffc;
+.content-text {
+    color: rgba(255, 255, 255, 0.911);
     text-align: left;
     font-family: Montserrat, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 300;
     line-height: 25px;
 }
@@ -388,7 +388,7 @@ body {
 }
 
 .graph-text-block {
-    color: #fff;
+    color: #ffffff;
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: Montserrat, sans-serif;

@@ -20,7 +20,7 @@ layout = html.Div(children=[
                 data=df_satya.to_dict('records'),
                 page_size=20,
                 style_cell={
-                    "backgroundColor": "rgba(255, 255, 255, 0.2)",  # Transparent background for data cells
+                    "backgroundColor": "rgba(255, 255, 255, 0.7)",  # Transparent background for data cells
                     "border": "solid 1px rgba(169, 169, 169, 0.5)",  # Dark grey borders
                     "color": "rgba(0, 0, 0, 1)",  # White font color for data cells
                     "fontSize": 14,
