@@ -192,9 +192,14 @@ layout = html.Div([
     html.Div(className="graph-wrapper-vertical", children=[
         dcc.Graph(id='bubble_chart', figure={}, style={'height': '100%'}),
         html.Div(className="graph-insight", children=[
-            html.Div(className="graph-text-block", children="\u25CF  Inshight 1"),
-            html.Div(className="graph-text-block", children="\u25CF  Inshight 1"),
-            html.Div(className="graph-text-block", children="\u25CF  Inshight 1")
+            html.Div(className="graph-text-block", children=[
+                html.Div(className="graph-text-bullet", children="\u25CF  "),
+                html.Div(className="graph-text", children="People who have positive perception about Union Leaders are more likely to vote in general, but people who earn more than 75K$ but have studied till High School and have postive perception towards Company leaders are more likely to vote"),
+            ]),
+            html.Div(className="graph-text-block", children=[
+                html.Div(className="graph-text-bullet", children="\u25CF  "),
+                html.Div(className="graph-text", children="Black people who have positive perception about Union Leaders are voting in numbers significantly higher than who have positive perception about Company Leaders"),
+            ]),
         ])
     ]),
 

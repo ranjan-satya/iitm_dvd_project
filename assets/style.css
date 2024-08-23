@@ -26,7 +26,7 @@ body {
     flex-flow: column;
     justify-content: center;
     height: 8vh;
-    margin: 1.5vh 5% 0;
+    margin: 1.5vh 4% 0;
     padding-left: 0%;
     padding-right: 0%;
     display: flex;
@@ -50,7 +50,7 @@ body {
     border-radius: 20px;
     justify-content: flex-start;
     height: 88vh;
-    margin: 1vh 5% 0;
+    margin: 1vh 4% 0;
     display: flex;
 }
 
@@ -388,9 +388,21 @@ body {
 }
 
 .graph-text-block {
-    color: #ffffff;
+    display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.graph-text-bullet {
+    color: #ffffff;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    padding-right: 10px;
+}
+
+.graph-text {
+    color: #ffffff;
     font-family: Montserrat, sans-serif;
     font-size: 18px;
     font-weight: 300;

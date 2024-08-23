@@ -29,7 +29,7 @@ def filter_data_for_ease_of_voting(df_with_known_voting_status_q2_o1_q14, import
     return df_filtered_for_ease_of_voting
 
 def prepare_dataframe_for_ease_of_voting(df_filtered_for_ease_of_voting):
-    df_ease_of_voting_ce_columns = ['Election for Congress in 2009','Election for Congress in 2011','Election for Congress in 2014']
+    df_ease_of_voting_ce_columns = ['2009','2011','2014']
     df_ease_of_voting_ce_rows= ['Very difficult','Somewhat difficult','Somewhat easy','Very easy']
     df_ease_of_voting_ce = pd.DataFrame(columns=df_ease_of_voting_ce_columns)
     df_ease_of_voting_ce = df_ease_of_voting_ce.reindex(df_ease_of_voting_ce_rows) 
@@ -41,7 +41,7 @@ def prepare_dataframe_for_ease_of_voting(df_filtered_for_ease_of_voting):
             count = df_filtered_for_ease_of_voting[(df_filtered_for_ease_of_voting['Q14']==len(df_ease_of_voting_ce_rows)-eov_r) & (df_filtered_for_ease_of_voting['Q25_'+str((2*len(df_ease_of_voting_ce_columns))-(2*eov_c)-1)]==1)].shape[0]
             df_ease_of_voting_ce.loc[df_ease_of_voting_ce_rows[eov_r], df_ease_of_voting_ce_columns[eov_c]] = count
 
-    df_ease_of_voting_pe_columns = ['Presidential election in 2008','Presidential election in 2010','Presidential election in 2012']
+    df_ease_of_voting_pe_columns = ['2008','2010','2012']
     df_ease_of_voting_pe_rows= ['Very difficult','Somewhat difficult','Somewhat easy','Very easy']
     df_ease_of_voting_pe = pd.DataFrame(columns=df_ease_of_voting_pe_columns)
     df_ease_of_voting_pe = df_ease_of_voting_pe.reindex(df_ease_of_voting_pe_rows) 
@@ -61,7 +61,7 @@ def create_fig_for_ease_of_voting(df_ease_of_voting_ce, df_ease_of_voting_pe):
     fig_eov_pe = px.imshow(df_ease_of_voting_pe, color_continuous_scale='Peach')
 
     # Create a subplot with 1 row and 2 columns
-    fig_eov = make_subplots(rows=2, cols=1, subplot_titles=("Congress Elections", "Presidential Elections"))
+    fig_eov = make_subplots(rows=2, cols=1, subplot_titles=("Elections for Congress", "Presidential Elections"))
 
     # Calculate the minimum and maximum values across both datasets
     combined_data = np.concatenate((df_ease_of_voting_ce.values.flatten(), df_ease_of_voting_pe.values.flatten()))
@@ -153,9 +153,19 @@ layout = html.Div([
     html.Div(className="graph-wrapper-horizontal", children=[
         dcc.Graph(id='heatmap', figure={}, style={'height': '100%'}),
         html.Div(className="graph-insight", children=[
-            html.Div(className="graph-text-block", children="\u25CF  Inshight 1"),
-            html.Div(className="graph-text-block", children="\u25CF  Inshight 1"),
-            html.Div(className="graph-text-block", children="\u25CF  Inshight 1")
+            html.Div(className="graph-text-block", children=[
+                html.Div(className="graph-text-bullet", children="\u25CF  "),
+                html.Div(className="graph-text", children="More people are showing up in the Presidential Elections than that of Elections for Congress across the years."),
+            ]),
+            html.Div(className="graph-text-block", children=[
+                html.Div(className="graph-text-bullet", children="\u25CF  "),
+                html.Div(className="graph-text", children="Among the people who think it is very important to vote in order to be good member of the employee community, those who think it is very easy to vote are showing up in large numbers"),
+            ]),
+            html.Div(className="graph-text-block", children=[
+                html.Div(className="graph-text-bullet", children="\u25CF  "),
+                html.Div(className="graph-text", children="Among the people who don't think it is very important to vote in order to be good member of the employee community, those who think it is very easy to vote are showing up in less numbers"),
+            ]),
+            
         ])
     ]),
 
