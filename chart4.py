@@ -105,6 +105,7 @@ layout = html.Div([
 
     html.H1("Correlation of Voter Turnout with Perception about leaders", className="content-title"),
     html.Div(className='dropdown-wrapper-horizontal-chart', children=[
+            html.Img(src='/assets/education.png', style={'height': '20px', 'margin-right': '10px', 'margin-bottom': '8px'}),
             html.Div(className='content-text', children='Education: ',
                 style={'margin-right': '10px', 'padding-bottom': '5px'}),
             dcc.Dropdown(
@@ -126,8 +127,9 @@ layout = html.Div([
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
+            html.Img(src='/assets/ethnic.png', style={'height': '25px', 'margin-left': '30px','margin-right': '10px', 'margin-bottom': '8px'}),
             html.Div(className='content-text', children='Race: ',
-                style={'margin-right': '10px', 'margin-left': '20px', 'padding-bottom': '5px'}),
+                style={'margin-right': '10px', 'padding-bottom': '5px'}),
             dcc.Dropdown(
                 id='select_race',
                 options=[
@@ -149,8 +151,9 @@ layout = html.Div([
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
+            html.Img(src='/assets/salary.png', style={'height': '25px', 'margin-left': '30px','margin-right': '10px', 'margin-bottom': '8px'}),
             html.Div(className='content-text', children='Income Category: ',
-                style={'margin-right': '10px', 'margin-left': '20px', 'padding-bottom': '5px'}),
+                style={'margin-right': '10px', 'padding-bottom': '5px'}),
             dcc.Dropdown(
                 id='select_income',
                 options=[
