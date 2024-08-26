@@ -138,8 +138,8 @@ def display_page( dataset, chart1, chart2, chart3, chart4):
             chart4_layout  # Call the update_graph function from graph.py
         ]), *styles
 
+register_chart1_callbacks(app)  # Register the callbacks
+register_chart3_callbacks(app)  # Register the callbacks
+register_chart4_callbacks(app)  # Register the callbacks
 if __name__ == '__main__':
-    register_chart1_callbacks(app)  # Register the callbacks
-    register_chart3_callbacks(app)  # Register the callbacks
-    register_chart4_callbacks(app)  # Register the callbacks
     app.run_server(debug=True)

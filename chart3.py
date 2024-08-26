@@ -9,6 +9,7 @@ from dash import Dash, dcc, html, Input, Output
 
 df_satya = pd.read_csv("./Satya's Version.csv")
 
+
 # Global Preprocessing
 #-------------------------------------------------------------------------------
 unknown_voting_status_index_list = df_satya[(df_satya['Q25_1']==-1) | (df_satya['Q25_2']==-1) | (df_satya['Q25_3']==-1) | (df_satya['Q25_4']==-1) | (df_satya['Q25_5']==-1) | (df_satya['Q25_6']==-1)].index.tolist()
@@ -111,7 +112,7 @@ def create_fig_for_ease_of_voting(df_ease_of_voting_ce, df_ease_of_voting_pe):
         )
 
     # Update layout for the figure
-    fig_eov.update_layout(height=600, width=1100, 
+    fig_eov.update_layout(height=650, width=1100, 
                         plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to black
                         paper_bgcolor='rgba(0, 0, 0, 0)',  # Set paper background color to black
                         font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
@@ -131,8 +132,8 @@ layout = html.Div([
     html.H1("Correlation of Voter Turnout with Ease of Voting", className='content-title'),
 
     html.Div(className='dropdown-wrapper-horizontal-chart', children=[
-        html.P(className='content-text', children='Importance of Voting: ',
-            style={'margin-right': '10px'}),
+        html.Div(className='content-text', children='Importance of Voting: ',
+            style={'margin-right': '10px', 'padding-bottom': '5px'}),
         dcc.Dropdown(
             id='select_importance',
             options=[
@@ -148,12 +149,12 @@ layout = html.Div([
                 'borderRadius': '20px',
                 'fontFamily': 'DM Sans, sans-serif',
                 'fontWeight': '400',
-                'fontSize' : '18px',
+                'fontSize' : '19px',
                 'background-color': 'rgba(255, 255, 255, 0.6)',
             },
         ),
-        html.P(className='content-text', children='Voter Category: ',
-            style={'margin-right': '10px', 'margin-left': '30px'}),
+        html.Div(className='content-text', children='Voter Category: ',
+            style={'margin-right': '10px', 'margin-left': '30px', 'padding-bottom': '5px'}),
         dcc.Dropdown(
             id='select_category',
             options=[
@@ -168,7 +169,7 @@ layout = html.Div([
                 'borderRadius': '20px',
                 'fontFamily': 'DM Sans, sans-serif',
                 'fontWeight': '400',
-                'fontSize' : '18px',
+                'fontSize' : '19px',
                 'background-color': 'rgba(255, 255, 255, 0.6)',
             },
         )
@@ -208,15 +209,26 @@ def register_callbacks(app):
         [Input(component_id='select_importance', component_property='value'),
         Input(component_id='select_category', component_property='value')]
     )
+    # def update_graph(importance, category):
+    #     print(f"Importance: {importance}, Category: {category}")  # Debugging output
+    #     df_filtered_for_ease_of_voting = filter_data_for_ease_of_voting(df_preprocessed_for_ease_of_voting, importance, category)
+    #     df_ease_of_voting_ce, df_ease_of_voting_pe = prepare_dataframe_for_ease_of_voting(df_filtered_for_ease_of_voting)
+
+    #     # Plotly Express
+    #     fig_eov = create_fig_for_ease_of_voting(df_ease_of_voting_ce, df_ease_of_voting_pe)
+
+    #     return fig_eov
     def update_graph(importance, category):
+        try:
+            df_filtered_for_ease_of_voting = filter_data_for_ease_of_voting(df_preprocessed_for_ease_of_voting, importance, category)
+            df_ease_of_voting_ce, df_ease_of_voting_pe = prepare_dataframe_for_ease_of_voting(df_filtered_for_ease_of_voting)
 
-        df_filtered_for_ease_of_voting = filter_data_for_ease_of_voting(df_preprocessed_for_ease_of_voting, importance, category)
-        df_ease_of_voting_ce, df_ease_of_voting_pe = prepare_dataframe_for_ease_of_voting(df_filtered_for_ease_of_voting)
-
-        # Plotly Express
-        fig_eov = create_fig_for_ease_of_voting(df_ease_of_voting_ce, df_ease_of_voting_pe)
-
-        return fig_eov
+            # Plotly Express
+            fig_eov = create_fig_for_ease_of_voting(df_ease_of_voting_ce, df_ease_of_voting_pe)
+            return fig_eov
+        except Exception as e:
+            print(f"Error in update_graph: {e}")  # Log any errors
+            return {}  # Return an empty figure on error
 
 
 # if __name__ == '__main__':

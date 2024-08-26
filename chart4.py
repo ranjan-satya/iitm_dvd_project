@@ -90,7 +90,7 @@ def create_fig_for_perception(df_perception):
             gridcolor='rgba(178, 178, 178, 0.4)',  # Set the grid line color to grey
             gridwidth=1,  # Set the grid line width
         ),
-        height=600, 
+        height=650, 
         width=1300, 
         plot_bgcolor='rgba(255, 255, 255, 0)',  # Set plot background color to black
         paper_bgcolor='rgba(0, 0, 0, 0)',  # Set paper background color to black
@@ -105,8 +105,8 @@ layout = html.Div([
 
     html.H1("Correlation of Voter Turnout with Perception about leaders", className="content-title"),
     html.Div(className='dropdown-wrapper-horizontal-chart', children=[
-            html.P(className='content-text', children='Education: ',
-                style={'margin-right': '10px'}),
+            html.Div(className='content-text', children='Education: ',
+                style={'margin-right': '10px', 'padding-bottom': '5px'}),
             dcc.Dropdown(
                 id='select_education',
                 options=[
@@ -121,11 +121,13 @@ layout = html.Div([
                     'width': '200px', 
                     'borderRadius': '20px',
                     'fontFamily': 'DM Sans, sans-serif',
+                    'fontWeight': '400',
+                    'fontSize' : '19px',
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
-            html.P(className='content-text', children='Race: ',
-                style={'margin-right': '10px', 'margin-left': '20px'}),
+            html.Div(className='content-text', children='Race: ',
+                style={'margin-right': '10px', 'margin-left': '20px', 'padding-bottom': '5px'}),
             dcc.Dropdown(
                 id='select_race',
                 options=[
@@ -142,11 +144,13 @@ layout = html.Div([
                     'width': '200px', 
                     'borderRadius': '20px',
                     'fontFamily': 'DM Sans, sans-serif',
+                    'fontWeight': '400',
+                    'fontSize' : '19px',
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
-            html.P(className='content-text', children='Income Category: ',
-                style={'margin-right': '10px', 'margin-left': '20px'}),
+            html.Div(className='content-text', children='Income Category: ',
+                style={'margin-right': '10px', 'margin-left': '20px', 'padding-bottom': '5px'}),
             dcc.Dropdown(
                 id='select_income',
                 options=[
@@ -163,6 +167,8 @@ layout = html.Div([
                     'width': '200px', 
                     'borderRadius': '20px',
                     'fontFamily': 'DM Sans, sans-serif',
+                    'fontWeight': '400',
+                    'fontSize' : '19px',
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             )
