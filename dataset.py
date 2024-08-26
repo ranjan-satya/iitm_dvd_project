@@ -11,7 +11,14 @@ df_satya = pd.read_csv("./Satya's Version.csv")
 
 
 layout = html.Div(children=[
-    html.H1("Dataset", className='content-title'),
+    
+    html.Div(
+        className='content-title-wrapper',
+        children=[
+            html.H1("Dataset", className='content-title'),
+            html.Img(src='/assets/cells.png', style={'height': '30px', 'margin-left': '10px', 'margin-bottom': '40px'}),
+        ]
+    ),
     html.Br(),
     html.Div(
         style={'overflowX': 'auto', 'maxWidth': '1350px'},  # Enable horizontal scrolling

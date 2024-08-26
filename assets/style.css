@@ -60,7 +60,7 @@ body {
     backdrop-filter: blur(100px);
     border-radius: 20px;
     width: auto;
-    height: 70%;
+    height: 60%;
     overflow: auto;
 }
 
@@ -79,7 +79,7 @@ body {
     color: #000000;
     text-align: center;
     margin-bottom: 10px;
-    padding-top: 4%;
+    padding-top: 10%;
     padding-bottom: 4%;
     font-family: DM Sans, sans-serif;;
     font-size: 35px;
@@ -166,7 +166,40 @@ body {
     height: 30%;
     margin-top: 1vh;
     padding-bottom: 10px;
-    padding-top: 30px;
+    padding-top: 10px;
+}
+
+.credit-part {
+    background-color: var(--low-opacity-bg);
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);
+    border-radius: 20px;
+    width: auto;
+    height: 10%;
+    margin-top: 1vh;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+}
+
+.plotly-logo {
+    object-fit: cover;
+    width: 200px;
+    vertical-align: middle;
+}
+
+.content-title-wrapper {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .content-title {

@@ -30,7 +30,7 @@ app.layout = html.Div(className='body', children=[
 
     dcc.Location(id='_pages_location', refresh=False),  # URL management
     html.Section(className='header', children=[
-        html.H1(className='heading', children='CS4001 (Data Visualization Design) Project - Team Vizard')
+        html.H1(className='heading', children='CS4001 (Data Visualization Design) Project - Team VIZard')
     ]),
     
     html.Section(className='content-wrapper', children=[
@@ -49,6 +49,9 @@ app.layout = html.Div(className='body', children=[
                 html.Div(className='team-details', children='2. Harshini (21f1005191)'),
                 html.Div(className='team-details', children='3. John Joshi (21f1005544)'),
                 html.Div(className='team-details', children='4. Satya (21f1005375)'),
+            ]),
+            html.Section(className='credit-part', children=[
+                html.Img(src='/assets/Plotly-logo.png', className='plotly-logo')
             ])
         ]),
         html.Section(id='_pages_content', className='content', children=[
