@@ -8,6 +8,8 @@ from dataset import layout as dataset_layout
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
+server = app.server
+
 # Define the layout
 app.layout = html.Div(className='body', children=[
     # Google Web Font Loading Script
@@ -20,6 +22,11 @@ app.layout = html.Div(className='body', children=[
         rel='stylesheet'
     ),
     
+    html.Link(
+        href='https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap',
+        rel='stylesheet'
+    ),
+
     dcc.Location(id='_pages_location', refresh=False),  # URL management
     html.Section(className='header', children=[
         html.H1(className='heading', children='CS4001 (Data Visualization Design) Project - Team Vizard')

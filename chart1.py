@@ -44,7 +44,7 @@ donut_fig_race.update_layout(
     },
     plot_bgcolor='rgba(255, 255, 255, 0)',  # Set plot background color to black
     paper_bgcolor='rgba(255, 255, 255, 0)',  # Set paper background color to black
-    font=dict(color='black', family='Nunito, sans-serif', size=16),  # Set text color to white
+    font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
 )
 donut_fig_race.update_annotations(font=dict(size=25))
 
@@ -83,7 +83,7 @@ def create_voting_behavior_chart(selected_race=None):
         ),
         plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to black
         paper_bgcolor='rgba(255, 255, 255, 0)',  # Set paper background color to black
-        font=dict(color='black', family='Nunito, sans-serif', size=16),  # Set text color to white
+        font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
     )
     voting_behavior_fig.update_annotations(font=dict(size=25))
     return voting_behavior_fig

@@ -65,7 +65,7 @@ horizontal_bar_chart_racism.update_layout(
     },
     plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to black
     paper_bgcolor='rgba(255, 255, 255, 0)',  # Set paper background color to black
-    font=dict(color='black', family='Nunito, sans-serif', size=16),  # Set text color to black
+    font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to black
 )
 
 # Update text color based on the new 'Text Color' column
@@ -117,7 +117,7 @@ pie_chart_1.update_layout(title={
                             },
                         plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to black
                         paper_bgcolor='rgba(255, 255, 255, 0)',  # Set paper background color to black
-                        font=dict(color='black', family='Nunito, sans-serif', size=16),  # Set text color to white
+                        font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
         )
 
 # Pie chart for the last column
@@ -133,7 +133,7 @@ pie_chart_2.update_layout(title={
                             },
                             plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to black
                             paper_bgcolor='rgba(255, 255, 255, 0)',  # Set paper background color to black
-                            font=dict(color='black', family='Nunito, sans-serif', size=16),  # Set text color to white
+                            font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
                         )
 
 # Initialize the Dash app

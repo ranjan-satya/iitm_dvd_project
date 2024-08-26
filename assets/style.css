@@ -38,9 +38,9 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0% 3%;
-    font-family: Nunito, sans-serif;
+    font-family: DM Sans, sans-serif;
     font-size: 35px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .content-wrapper {
@@ -81,9 +81,9 @@ body {
     margin-bottom: 10px;
     padding-top: 4%;
     padding-bottom: 4%;
-    font-family: Nunito, sans-serif;
+    font-family: DM Sans, sans-serif;;
     font-size: 35px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .index-item {
@@ -94,7 +94,7 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     padding: 4% 2%;
-    font-family: Nunito, sans-serif;
+    font-family: DM Sans, sans-serif;;
     font-size: 18px;
     font-weight: 300;
     transition: all .2s;
@@ -127,9 +127,9 @@ body {
     margin-bottom: 0;
     padding-top: 1%;
     padding-bottom: 2%;
-    font-family: Nunito, sans-serif;
+    font-family: DM Sans, sans-serif;;
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .team-member {
@@ -140,7 +140,7 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     padding: 4% 2%;
-    font-family: Nunito, sans-serif;
+    font-family: DM Sans, sans-serif;;
     font-size: 20px;
     font-weight:300;
     transition: all .2s;
@@ -152,8 +152,8 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     padding: 10px 2%;
-    font-family: Nunito, sans-serif;
-    font-size: 17px;
+    font-family: DM Sans, sans-serif;;
+    font-size: 15px;
     font-weight: 300;
 }
 
@@ -174,22 +174,22 @@ body {
     text-align: center;
     margin-top: 0;
     margin-bottom: 40px;
-    font-family: Nunito, sans-serif;
-    font-weight: 600;
+    font-family: DM Sans, sans-serif;;
+    font-weight: 500;
     font-size: 35px;
 }
 
 .content-sub-heading {
     color: rgb(0, 0, 0);
-    font-family: Nunito, sans-serif;
-    font-weight: 500;
+    font-family: DM Sans, sans-serif;;
+    font-weight: 400;
     font-size: 27px;
 }
 
 .content-text {
     color: rgba(0, 0, 0, 0.911);
     text-align: left;
-    font-family: Nunito, sans-serif;
+    font-family: DM Sans, sans-serif;;
     font-size: 20px;
     font-weight: 400;
     line-height: 25px;
@@ -290,8 +290,8 @@ body {
     background-color: var(--low-opacity-bg);
     border-radius: 11px;
     height: 36px;
-    font-family: Nunito, sans-serif;
-    font-weight: 400;
+    font-family: DM Sans, sans-serif;
+    font-weight: 300;
 }
 
 .dropdown {
@@ -312,9 +312,9 @@ body {
     border-radius: 20px;
     align-items: center;
     height: 36px;
-    font-family: Nunito, sans-serif;
+    font-family: DM Sans, sans-serif;;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     display: flex;
 }
 
@@ -367,9 +367,9 @@ body {
     height: auto;
     margin-bottom: 5px;
     padding-left: 12px;
-    font-family: Nunito, sans-serif;
+    font-family: DM Sans, sans-serif;;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 200;
     transition: all .2s;
 }
 
@@ -410,16 +410,16 @@ body {
 }
 
 .graph-text-bullet {
-    color: #000000;
-    font-family: Nunito, sans-serif;
+    color: #696969;
+    font-family: DM Sans, sans-serif;;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 200;
     padding-right: 15px;
 }
 
 .graph-text {
-    color: #000000;
-    font-family: Nunito, sans-serif;
+    color: #474747;
+    font-family: DM Sans, sans-serif;;
     font-size: 20px;
     font-weight: 400;
 }

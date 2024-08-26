@@ -114,7 +114,7 @@ def create_fig_for_ease_of_voting(df_ease_of_voting_ce, df_ease_of_voting_pe):
     fig_eov.update_layout(height=600, width=1100, 
                         plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to black
                         paper_bgcolor='rgba(0, 0, 0, 0)',  # Set paper background color to black
-                        font=dict(color='black', family='Nunito, sans-serif', size=16),  # Set text color to white
+                        font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
                     )
     fig_eov.update_annotations(font=dict(size=25))
     return fig_eov
@@ -146,7 +146,7 @@ layout = html.Div([
             style={
                 'width': '250px', 
                 'borderRadius': '20px',
-                'fontFamily': 'Nunito',
+                'fontFamily': 'DM Sans, sans-serif',
                 'fontWeight': '400',
                 'fontSize' : '20px',
                 'background-color': 'rgba(255, 255, 255, 0.6)',
@@ -166,7 +166,7 @@ layout = html.Div([
             style={
                 'width': '250px', 
                 'borderRadius': '20px',
-                'fontFamily': 'Nunito',
+                'fontFamily': 'DM Sans, sans-serif',
                 'fontWeight': '400',
                 'fontSize' : '20px',
                 'background-color': 'rgba(255, 255, 255, 0.6)',

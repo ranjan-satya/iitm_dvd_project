@@ -25,7 +25,7 @@ layout = html.Div(children=[
                     "color": "rgba(0, 0, 0, 1)",  # White font color for data cells
                     "fontSize": 14,
                     "textAlign": "left",
-                    "fontFamily": "Nunito, sans-serif",
+                    "fontFamily": "DM Sans, sans-serif",
                 },
                 style_header={
                     "backgroundColor": "rgba(0, 0, 0, 0.4)",  # Black background for header cells
@@ -33,7 +33,7 @@ layout = html.Div(children=[
                     "color": "white",  # White font color for header cells
                     "padding": "10px",
                     "fontSize": 18,
-                    "fontFamily": "Nunito, sans-serif",
+                    "fontFamily": "DM Sans, sans-serif",
                 },
                 style_table={
                     'overflowX': 'auto',  # Enable horizontal scrolling for the table

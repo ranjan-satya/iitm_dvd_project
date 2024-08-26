@@ -94,7 +94,7 @@ def create_fig_for_perception(df_perception):
         width=1300, 
         plot_bgcolor='rgba(255, 255, 255, 0)',  # Set plot background color to black
         paper_bgcolor='rgba(0, 0, 0, 0)',  # Set paper background color to black
-        font=dict(color='black', family='Nunito, sans-serif', size=16)  # Set text color to white
+        font=dict(color='black', family='DM Sans, sans-serif', size=16)  # Set text color to white
     )
     return fig
 
@@ -120,7 +120,7 @@ layout = html.Div([
                 style={
                     'width': '200px', 
                     'borderRadius': '20px',
-                    'fontFamily': 'Montserrat',
+                    'fontFamily': 'DM Sans, sans-serif',
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
@@ -141,7 +141,7 @@ layout = html.Div([
                 style={
                     'width': '200px', 
                     'borderRadius': '20px',
-                    'fontFamily': 'Montserrat',
+                    'fontFamily': 'DM Sans, sans-serif',
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
@@ -162,7 +162,7 @@ layout = html.Div([
                 style={
                     'width': '200px', 
                     'borderRadius': '20px',
-                    'fontFamily': 'Montserrat',
+                    'fontFamily': 'DM Sans, sans-serif',
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             )
