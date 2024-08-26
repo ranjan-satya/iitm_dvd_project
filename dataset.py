@@ -14,18 +14,18 @@ layout = html.Div(children=[
     html.H1("Dataset", className='content-title'),
     html.Br(),
     html.Div(
-        style={'overflowX': 'auto', 'maxWidth': '1300px'},  # Enable horizontal scrolling
+        style={'overflowX': 'auto', 'maxWidth': '1350px'},  # Enable horizontal scrolling
         children=[
             dash_table.DataTable(
                 data=df_satya.to_dict('records'),
-                page_size=20,
+                page_size=18,
                 style_cell={
-                    "backgroundColor": "rgba(255, 255, 255, 0.7)",  # Transparent background for data cells
+                    "backgroundColor": "rgba(220, 220, 220, 0)",  # Transparent background for data cells
                     "border": "solid 1px rgba(169, 169, 169, 0.5)",  # Dark grey borders
                     "color": "rgba(0, 0, 0, 1)",  # White font color for data cells
                     "fontSize": 14,
                     "textAlign": "left",
-                    "fontFamily": "Montserrat, sans-serif",
+                    "fontFamily": "Nunito, sans-serif",
                 },
                 style_header={
                     "backgroundColor": "rgba(0, 0, 0, 0.4)",  # Black background for header cells
@@ -33,11 +33,11 @@ layout = html.Div(children=[
                     "color": "white",  # White font color for header cells
                     "padding": "10px",
                     "fontSize": 18,
-                    "fontFamily": "Montserrat, sans-serif",
+                    "fontFamily": "Nunito, sans-serif",
                 },
                 style_table={
                     'overflowX': 'auto',  # Enable horizontal scrolling for the table
-                    'maxWidth': '1300px',  # Set maximum width for the table
+                    'maxWidth': '1350px',  # Set maximum width for the table
                 },
             )
         ]

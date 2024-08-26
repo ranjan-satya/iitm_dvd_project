@@ -17,7 +17,7 @@ df_with_known_voting_status = df_satya.drop(unknown_voting_status_index_list)
 # Util Functions
 #-------------------------------------------------------------------------------
 
-def filter_data_for_perception(df_with_known_voting_status, education, race, gender, income):
+def filter_data_for_perception(df_with_known_voting_status, education, race, income):
     df_filtered_for_perception = df_with_known_voting_status
     if education != 'All':
         df_filtered_for_perception = df_with_known_voting_status[df_with_known_voting_status['Education'] == education]
@@ -25,15 +25,12 @@ def filter_data_for_perception(df_with_known_voting_status, education, race, gen
     if race != 'All':
         df_filtered_for_perception = df_filtered_for_perception[df_filtered_for_perception['Race'] == race]
 
-    if gender != 'All':
-        df_filtered_for_perception = df_filtered_for_perception[df_filtered_for_perception['Gender'] == gender]
-
     if income != 'All':
         df_filtered_for_perception = df_filtered_for_perception[df_filtered_for_perception['Income_cat'] == income]
     return df_filtered_for_perception
 
 def prepare_dataframe_for_perception(df_filtered_for_perception):
-    df_perception_columns = ['Perception About Union Leaders', 'Perception About Company Leaders','Voters_count']
+    df_perception_columns = ['Perception About Union Leaders', 'Perception About Company Leaders','No. of Voters']
     ul_perception_values = [-2,-1,0,1,2]
     ul_perception_options = [5,2,3,4,1]
     cl_perception_values = [-2,-1,0,1,2]
@@ -63,9 +60,9 @@ def create_fig_for_perception(df_perception):
         df_perception,
         x="Perception About Union Leaders",
         y="Perception About Company Leaders",
-        size="Voters_count",
-        color="Voters_count",
-        color_continuous_scale='Turbo',
+        size="No. of Voters",
+        color="No. of Voters",
+        color_continuous_scale='Portland',
         log_x=False,
         size_max=60,
         opacity=1,
@@ -75,29 +72,29 @@ def create_fig_for_perception(df_perception):
     fig.update_layout(
         xaxis=dict(
             zeroline=True,  # Show the zero line
-            zerolinecolor='rgba(0,0,0, 0.5)',  # Set the zero line color
+            zerolinecolor='rgba(101, 101, 101, 0.4)',  # Set the zero line color
             zerolinewidth=1,  # Set the zero line width
             title='Perception About Union Leaders',  # Optional: Add title to x-axis
             anchor='y',  # Anchor to y-axis
             tickvals=[-2, -1, 0, 1, 2],  # Specify the tick values
             ticktext=['-2', '-1', '0', '1', '2'],  # Specify the tick labels
-            gridcolor='rgba(115, 114, 115, 0.37)',  # Set the grid line color to grey
+            gridcolor='rgba(178, 178, 178, 0.4)',  # Set the grid line color to grey
             gridwidth=1,  # Set the grid line width
         ),
         yaxis=dict(
             zeroline=True,  # Show the zero line
-            zerolinecolor='rgba(0,0,0, 0.5)',  # Set the zero line color
+            zerolinecolor='rgba(101, 101, 101, 0.4)',  # Set the zero line color
             zerolinewidth=1,  # Set the zero line width
             title='Perception About Company Leaders',  # Optional: Add title to y-axis
             anchor='x',  # Anchor to x-axis
-            gridcolor='rgba(115, 114, 115, 0.37)',  # Set the grid line color to grey
+            gridcolor='rgba(178, 178, 178, 0.4)',  # Set the grid line color to grey
             gridwidth=1,  # Set the grid line width
         ),
-        height=500, 
-        width=1200, 
+        height=600, 
+        width=1300, 
         plot_bgcolor='rgba(255, 255, 255, 0)',  # Set plot background color to black
         paper_bgcolor='rgba(0, 0, 0, 0)',  # Set paper background color to black
-        font=dict(color='white', family='Montserrat, sans-serif')  # Set text color to white
+        font=dict(color='black', family='Nunito, sans-serif', size=16)  # Set text color to white
     )
     return fig
 
@@ -107,7 +104,7 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 layout = html.Div([
 
     html.H1("Correlation of Voter Turnout with Perception about leaders", className="content-title"),
-    html.Div(className='dropdown-wrapper', children=[
+    html.Div(className='dropdown-wrapper-horizontal-chart', children=[
             html.P(className='content-text', children='Education: ',
                 style={'margin-right': '10px'}),
             dcc.Dropdown(
@@ -148,25 +145,6 @@ layout = html.Div([
                     'background-color': 'rgba(255, 255, 255, 0.6)',
                 },
             ),
-            html.P(className='content-text', children='Gender: ',
-                style={'margin-right': '10px', 'margin-left': '20px'}),
-            dcc.Dropdown(
-                id='select_gender',
-                options=[
-                    {"label": "All", "value": "All"},
-                    {"label": "Female", "value": "Female"},
-                    {"label": "Male", "value": "Male"}
-                ],
-                multi=False,
-                value="All",
-                className='dash-dropdown',
-                style={
-                    'width': '200px', 
-                    'borderRadius': '20px',
-                    'fontFamily': 'Montserrat',
-                    'background-color': 'rgba(255, 255, 255, 0.6)',
-                },
-            ),
             html.P(className='content-text', children='Income Category: ',
                 style={'margin-right': '10px', 'margin-left': '20px'}),
             dcc.Dropdown(
@@ -190,7 +168,10 @@ layout = html.Div([
             )
         ]),
     html.Div(className="graph-wrapper-vertical", children=[
-        dcc.Graph(id='bubble_chart', figure={}, style={'height': '100%'}),
+        html.Div( className="graph-horizontal-center", children=[
+                dcc.Graph(id='bubble_chart', figure={}, style={'height': '100%'}),
+            ]
+        ),
         html.Div(className="graph-insight", children=[
             html.Div(className="graph-text-block", children=[
                 html.Div(className="graph-text-bullet", children="\u25CF  "),
@@ -214,12 +195,11 @@ def register_callbacks(app):
         Output(component_id='bubble_chart', component_property='figure'),
         [Input(component_id='select_education', component_property='value'),
         Input(component_id='select_race', component_property='value'),
-        Input(component_id='select_gender', component_property='value'),
         Input(component_id='select_income', component_property='value')]
     )
-    def update_graph(education, race, gender, income):
+    def update_graph(education, race, income):
 
-        df_filtered_for_perception = filter_data_for_perception(df_with_known_voting_status.copy(),education, race, gender, income)
+        df_filtered_for_perception = filter_data_for_perception(df_with_known_voting_status.copy(),education, race, income)
         df_perception = prepare_dataframe_for_perception(df_filtered_for_perception)
         
         # Plotly Express

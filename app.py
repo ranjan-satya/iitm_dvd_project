@@ -1,6 +1,8 @@
 import dash
 from dash import html, dcc, callback, Input, Output
+from chart1 import layout as chart1_layout, register_callbacks as register_chart1_callbacks
 from chart3 import layout as chart3_layout, register_callbacks as register_chart3_callbacks
+from chart2 import layout as chart2_layout
 from chart4 import layout as chart4_layout, register_callbacks as register_chart4_callbacks
 from dataset import layout as dataset_layout
 
@@ -13,6 +15,10 @@ app.layout = html.Div(className='body', children=[
         href='https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap',
         rel='stylesheet'
     ),
+    html.Link(
+        href='https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap',
+        rel='stylesheet'
+    ),
     
     dcc.Location(id='_pages_location', refresh=False),  # URL management
     html.Section(className='header', children=[
@@ -23,30 +29,22 @@ app.layout = html.Div(className='body', children=[
         html.Div(className='content-left', children=[
             html.Section(className='index', children=[
                 html.H2(className='index-title', children='Content'),
-                html.Div(className='index-item', id='link-introduction', children='- Introduction'),
                 html.Div(className='index-item', id='link-dataset', children='- Dataset'),
-                html.Div(className='index-item', id='link-chart1', children='- Chart 1'),
-                html.Div(className='index-item', id='link-chart2', children='- Chart 2'),
+                html.Div(className='index-item', id='link-chart1', children='- Voting Behavior'),
+                html.Div(className='index-item', id='link-chart2', children='- Mode of Voting'),
                 html.Div(className='index-item', id='link-chart3', children='- Ease of Voting'),
                 html.Div(className='index-item', id='link-chart4', children="- Leaders' Perception"),
-                html.Div(className='index-item', id='link-chart5', children='- Chart 5'),
-                html.Div(className='index-item', id='link-chart6', children='- Chart 6'),
-                html.Div(className='index-item', id='link-dashboard', children='- Dashboard')
             ]),
             html.Section(className='team-members', children=[
                 html.H2(className='team-title', children='Team Members'),
                 html.Div(className='team-details', children='1. Abel (21f2000265)'),
                 html.Div(className='team-details', children='2. Harshini (21f1005191)'),
-                html.Div(className='team-details', children='3. Satya (21f1005375)'),
-                html.Div(className='team-details', children='4. John Joshi (21f1005544)')
+                html.Div(className='team-details', children='3. John Joshi (21f1005544)'),
+                html.Div(className='team-details', children='4. Satya (21f1005375)'),
             ])
         ]),
         html.Section(id='_pages_content', className='content', children=[
-            html.H2(className='content-title', children='Introduction'),
-            html.H3(className='content-sub-heading', children='Project Title'),
-            html.P(className='contnet-text', children='Boosting Voter Turnout: Insights from Our Worker Community'),
-            html.H3(className='content-sub-heading', children='Overview'),
-            html.P(className='contnet-text', children='The union leaders have noticed a troubling trend over the past few election terms: A significant number of workers are not participating in the union elections. This lack of participation has raised concerns about whether the union truly represents the interests and needs of all its members. To address this issue, the union committee has conducted a comprehensive survey to understand the reasons behind the low voter turnout.')
+            dataset_layout 
         ])
     ])
 ])
@@ -54,32 +52,24 @@ app.layout = html.Div(className='body', children=[
 # Define the callback to update the content based on the selected page
 @callback(
     Output('_pages_content', 'children'),
-    Output('link-introduction', 'style'),
     Output('link-dataset', 'style'),
     Output('link-chart1', 'style'),
     Output('link-chart2', 'style'),
     Output('link-chart3', 'style'),
     Output('link-chart4', 'style'),
-    Output('link-chart5', 'style'),
-    Output('link-chart6', 'style'),
-    Output('link-dashboard', 'style'),
-    Input('link-introduction', 'n_clicks'),
     Input('link-dataset', 'n_clicks'),
     Input('link-chart1', 'n_clicks'),
     Input('link-chart2', 'n_clicks'),
     Input('link-chart3', 'n_clicks'),
     Input('link-chart4', 'n_clicks'),
-    Input('link-chart5', 'n_clicks'),
-    Input('link-chart6', 'n_clicks'),
-    Input('link-dashboard', 'n_clicks'),
 )
-def display_page(introduction, dataset, chart1, chart2, chart3, chart4, chart5, chart6, dashboard):
+
+def display_page( dataset, chart1, chart2, chart3, chart4):
     ctx = dash.callback_context
 
     # Default styles for all links
     default_style = {
-        'color': '#fff',
-        # 'background-color': 'transparent',
+        'color': '#000000',
         'border-bottom': '0 #fffc',
         'border-radius': '8px',
         'padding': '4% 2%',
@@ -91,7 +81,7 @@ def display_page(introduction, dataset, chart1, chart2, chart3, chart4, chart5, 
     active_style = {
         'color': '#fff',
         '-webkit-text-stroke-width': '.3px',
-        'background-color': '#00000033',
+        'background-color': '#00000066',
         'border-bottom': '0 #fffc',
         'border-radius': '8px',
         'padding': '4% 2%',
@@ -100,68 +90,48 @@ def display_page(introduction, dataset, chart1, chart2, chart3, chart4, chart5, 
     }
 
     if not ctx.triggered:
-        # Default to Introduction page
+        # Default to Dataset page
         return (
             html.Div([
-                html.H2(className='content-title', children='Introduction'),
-                html.H3(className='content-sub-heading', children='Project Title'),
-                html.P(className='content-text', children='Boosting Voter Turnout: Insights from Our Worker Community'),
-                html.H3(className='content-sub-heading', children='Overview'),
-                html.P(className='content-text', children='The union leaders have noticed a troubling trend over the past few election terms: A significant number of workers are not participating in the union elections. This lack of participation has raised concerns about whether the union truly represents the interests and needs of all its members. To address this issue, the union committee has conducted a comprehensive survey to understand the reasons behind the low voter turnout.')
+                dataset_layout 
             ]),
-            active_style,  # Active style for Introduction
-            *[default_style] * 8  # Default styles for all other links
+            active_style,  # Active style for Dataset
+            *[default_style] * 4  # Default styles for all other links
         )
 
     button_id = ctx.triggered[0]['prop_id'].split('.')[0]
 
     # Set styles based on which link was clicked
-    styles = [default_style] * 9  # Default styles for all links
+    styles = [default_style] * 5  # Default styles for all links
 
-    if button_id == 'link-introduction':
+    if button_id == 'link-dataset':
         styles[0] = active_style
-        return (
-            html.Div([
-                html.H2(className='content-title', children='Introduction'),
-                html.H3(className='content-sub-heading', children='Project Title'),
-                html.P(className='content-text', children='Boosting Voter Turnout: Insights from Our Worker Community'),
-                html.H3(className='content-sub-heading', children='Overview'),
-                html.P(className='content-text', children='The union leaders have noticed a troubling trend over the past few election terms: A significant number of workers are not participating in the union elections. This lack of participation has raised concerns about whether the union truly represents the interests and needs of all its members. To address this issue, the union committee has conducted a comprehensive survey to understand the reasons behind the low voter turnout.')
-            ]),
-            *styles
-        )
-    elif button_id == 'link-dataset':
-        styles[1] = active_style
         return html.Div([
             dataset_layout  
         ]), *styles
     elif button_id == 'link-chart1':
-        styles[2] = active_style
-        return html.Div([html.H2('Chart 1'), html.P('Details about Chart 1.')]), *styles
+        styles[1] = active_style
+        return html.Div([
+            chart1_layout  # Call the update_graph function from graph.py
+        ]), *styles
     elif button_id == 'link-chart2':
-        styles[3] = active_style
-        return html.Div([html.H2('Chart 2'), html.P('Details about Chart 2.')]), *styles
+        styles[2] = active_style
+        return html.Div([
+            chart2_layout  # Call the update_graph function from graph.py
+        ]), *styles
     elif button_id == 'link-chart3':
-        styles[4] = active_style
+        styles[3] = active_style
         return html.Div([
             chart3_layout  # Call the update_graph function from graph.py
         ]), *styles
     elif button_id == 'link-chart4':
-        styles[5] = active_style
+        styles[4] = active_style
         return html.Div([
             chart4_layout  # Call the update_graph function from graph.py
         ]), *styles
-    elif button_id == 'link-chart5':
-        styles[6] = active_style
-        return html.Div([html.H2('Chart 5'), html.P('Details about Chart 5.')]), *styles
-    elif button_id == 'link-chart6':
-        styles[7] = active_style
-        return html.Div([html.H2('Chart 6'), html.P('Details about Chart 6.')]), *styles
-    elif button_id == 'link-dashboard':
-        styles[8] = active_style
-        return html.Div([html.H2('Dashboard'), html.P('Overview of the dashboard.')]), *styles
 
 if __name__ == '__main__':
+    register_chart1_callbacks(app)  # Register the callbacks
     register_chart3_callbacks(app)  # Register the callbacks
     register_chart4_callbacks(app)  # Register the callbacks
     app.run_server(debug=True)

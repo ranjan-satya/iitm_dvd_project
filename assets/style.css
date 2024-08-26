@@ -9,13 +9,13 @@ html {
 
 body {
     height: 100vh; 
-    background-color: #000;
-    background-image: radial-gradient(circle closest-corner at 0 64%, #6b106580, #fff0), radial-gradient(circle closest-corner at 100% 27%, #068d6e80, #0000);
+    background-color: #fff;
+    background-image: radial-gradient(circle farthest-side at 78% 98%, #a16bff66, #fff0 43%), radial-gradient(circle closest-corner at 75% 37%, #cd68ff66, #fff0), radial-gradient(circle closest-corner at 22% 41%, #ff927066, #fff0), radial-gradient(circle farthest-side at 12% 83%, #ffd87666, #fff0 31%), radial-gradient(circle closest-corner at 53% 95%, #66a1ff66, #fff0);
     margin: 0;
 }
 
 :root {
-    --low-opacity-bg: #5050508f;
+    --low-opacity-bg: rgba(255, 255, 255, 0.7);
 }
 
 .header {
@@ -33,14 +33,14 @@ body {
 }
 
 .heading {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-align: center;
     margin-top: 0;
     margin-bottom: 0;
     padding: 0% 3%;
-    font-family: Montserrat, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 35px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .content-wrapper {
@@ -60,7 +60,7 @@ body {
     backdrop-filter: blur(100px);
     border-radius: 20px;
     width: auto;
-    height: 80%;
+    height: 70%;
     overflow: auto;
 }
 
@@ -69,48 +69,48 @@ body {
     -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
     border-radius: 20px;
-    width: 80%;
+    width: 95%;
     margin-right: 0%;
     padding: 2%;
     overflow: auto;
 }
 
 .index-title {
-    color: #fffcfc;
+    color: #000000;
     text-align: center;
     margin-bottom: 10px;
     padding-top: 4%;
     padding-bottom: 4%;
-    font-family: Montserrat, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 35px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .index-item {
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
     border: 1px #000;
     border-bottom-color: #0000;
     margin-left: 10%;
     margin-right: 10%;
     padding: 4% 2%;
-    font-family: Montserrat, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 18px;
     font-weight: 300;
     transition: all .2s;
 }
 
 .index-item:hover {
-    color: #fff;
+    color: #000000;
     -webkit-text-stroke-width: .3px;
     background-color: #0000001c;
-    border-bottom: 0 #fffc;
+    border-bottom: 0 rgba(0, 0, 0, 0.8);
     border-radius: 8px;
 }
 
 .index-item:active {
     -webkit-text-stroke-width: .3px;
-    background-color: #0000001c;
+    background-color: #00000046;
     text-decoration: none;
 }
 
@@ -121,26 +121,26 @@ body {
 }
 
 .team-title {
-    color: #fffcfc;
+    color: #000000;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 0;
     padding-top: 1%;
     padding-bottom: 2%;
-    font-family: Montserrat, sans-serif;
-    font-size: 20px;
-    font-weight: 300;
+    font-family: Nunito, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
 }
 
 .team-member {
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
     border: 1px #000;
     border-bottom-color: #0000;
     margin-left: 10%;
     margin-right: 10%;
     padding: 4% 2%;
-    font-family: Montserrat, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 20px;
     font-weight:300;
     transition: all .2s;
@@ -148,11 +148,11 @@ body {
 
 
 .team-details {
-    color: #ffffff;
+    color: #000000;
     margin-left: 10%;
     margin-right: 10%;
-    padding: 5px 2%;
-    font-family: Montserrat, sans-serif;
+    padding: 10px 2%;
+    font-family: Nunito, sans-serif;
     font-size: 17px;
     font-weight: 300;
 }
@@ -163,35 +163,35 @@ body {
     backdrop-filter: blur(100px);
     border-radius: 20px;
     width: auto;
-    height: 20%;
+    height: 30%;
     margin-top: 1vh;
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 .content-title {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-align: center;
     margin-top: 0;
-    margin-bottom: 20px;
-    font-family: Montserrat, sans-serif;
-    font-weight: 500;
+    margin-bottom: 40px;
+    font-family: Nunito, sans-serif;
+    font-weight: 600;
     font-size: 35px;
 }
 
 .content-sub-heading {
-    color: rgb(255, 255, 255);
-    font-family: Montserrat, sans-serif;
-    font-weight: 450;
+    color: rgb(0, 0, 0);
+    font-family: Nunito, sans-serif;
+    font-weight: 500;
     font-size: 27px;
 }
 
 .content-text {
-    color: rgba(255, 255, 255, 0.911);
+    color: rgba(0, 0, 0, 0.911);
     text-align: left;
-    font-family: Montserrat, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 25px;
 }
 
@@ -269,7 +269,15 @@ body {
 }
 
 
-.dropdown-wrapper {
+.dropdown-wrapper-horizontal-chart {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.dropdown-wrapper-vertical-chart {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     justify-content: flex-start;
@@ -277,11 +285,12 @@ body {
     display: flex;
 }
 
+
 .select-field {
     background-color: var(--low-opacity-bg);
     border-radius: 11px;
     height: 36px;
-    font-family: Montserrat, sans-serif;
+    font-family: Nunito, sans-serif;
     font-weight: 400;
 }
 
@@ -303,7 +312,7 @@ body {
     border-radius: 20px;
     align-items: center;
     height: 36px;
-    font-family: Montserrat, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 16px;
     font-weight: 400;
     display: flex;
@@ -358,7 +367,7 @@ body {
     height: auto;
     margin-bottom: 5px;
     padding-left: 12px;
-    font-family: Montserrat, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 16px;
     font-weight: 300;
     transition: all .2s;
@@ -374,6 +383,7 @@ body {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     display: flex;
+    align-items: center;
 }
 
 .graph-wrapper-vertical {
@@ -383,29 +393,35 @@ body {
     display: flex;
 }
 
+.graph-horizontal-center {
+    display: flex;
+    justify-content: center;
+}
+
 .graph-insight {
-    padding: 20px 10px 10px 10px;
+    padding: 4% 10px 10px 10px;
 }
 
 .graph-text-block {
     display: flex;
     padding-top: 10px;
+    padding-left: 10px;
     padding-bottom: 10px;
 }
 
 .graph-text-bullet {
-    color: #ffffff;
-    font-family: Montserrat, sans-serif;
+    color: #000000;
+    font-family: Nunito, sans-serif;
     font-size: 18px;
-    font-weight: 300;
-    padding-right: 10px;
+    font-weight: 400;
+    padding-right: 15px;
 }
 
 .graph-text {
-    color: #ffffff;
-    font-family: Montserrat, sans-serif;
-    font-size: 18px;
-    font-weight: 300;
+    color: #000000;
+    font-family: Nunito, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 991px) {
