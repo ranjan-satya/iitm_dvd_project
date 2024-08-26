@@ -136,8 +136,8 @@ pie_chart_2.update_layout(title={
                             font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
                         )
 
-# Initialize the Dash app
-app = dash.Dash(__name__)
+# # Initialize the Dash app
+# app = dash.Dash(__name__)
 
 # Layout of the dashboard
 layout = html.Div([
@@ -164,6 +164,6 @@ layout = html.Div([
     ], style={'display': 'flex', 'justify-content': 'space-between'})
 ], style={'padding': '10px', 'font-family': 'Arial', 'overflow': 'hidden'})  # Adjust padding and prevent scrolling
 
-# Run the app
-if __name__ == '__main__':
-    app.run_server(debug=True)
+# # Run the app
+# if __name__ == '__main__':
+#     app.run_server(debug=True)

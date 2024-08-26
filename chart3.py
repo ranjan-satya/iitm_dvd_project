@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from dash import Dash, dcc, html, Input, Output
-import dash_bootstrap_components as dbc
+
 
 df_satya = pd.read_csv("./Satya's Version.csv")
 
@@ -124,7 +124,7 @@ def create_fig_for_ease_of_voting(df_ease_of_voting_ce, df_ease_of_voting_pe):
 df_preprocessed_for_ease_of_voting = preprocess_data_for_ease_of_voting(df_with_known_voting_status.copy())
 
 
-app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+# app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # App layout
 layout = html.Div([
@@ -148,7 +148,7 @@ layout = html.Div([
                 'borderRadius': '20px',
                 'fontFamily': 'DM Sans, sans-serif',
                 'fontWeight': '400',
-                'fontSize' : '20px',
+                'fontSize' : '18px',
                 'background-color': 'rgba(255, 255, 255, 0.6)',
             },
         ),
@@ -168,7 +168,7 @@ layout = html.Div([
                 'borderRadius': '20px',
                 'fontFamily': 'DM Sans, sans-serif',
                 'fontWeight': '400',
-                'fontSize' : '20px',
+                'fontSize' : '18px',
                 'background-color': 'rgba(255, 255, 255, 0.6)',
             },
         )
@@ -219,5 +219,5 @@ def register_callbacks(app):
         return fig_eov
 
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+# if __name__ == '__main__':
+#     app.run_server(debug=True)

@@ -88,8 +88,8 @@ def create_voting_behavior_chart(selected_race=None):
     voting_behavior_fig.update_annotations(font=dict(size=25))
     return voting_behavior_fig
 
-# Initialize the Dash app
-app = dash.Dash(__name__)
+# # Initialize the Dash app
+# app = dash.Dash(__name__)
 
 # Layout of the dashboard
 layout = html.Div([
@@ -126,6 +126,6 @@ def register_callbacks(app):
         else:
             return create_voting_behavior_chart()
 
-# Run the app
-if __name__ == '__main__':
-    app.run_server(debug=True)
+# # Run the app
+# if __name__ == '__main__':
+#     app.run_server(debug=True)

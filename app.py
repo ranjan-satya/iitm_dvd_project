@@ -1,14 +1,15 @@
 import dash
 from dash import html, dcc, callback, Input, Output
+import dash_bootstrap_components as dbc 
 from chart1 import layout as chart1_layout, register_callbacks as register_chart1_callbacks
 from chart3 import layout as chart3_layout, register_callbacks as register_chart3_callbacks
 from chart2 import layout as chart2_layout
 from chart4 import layout as chart4_layout, register_callbacks as register_chart4_callbacks
 from dataset import layout as dataset_layout
 
-app = dash.Dash(__name__, suppress_callback_exceptions=True)
-
+app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
+
 
 # Define the layout
 app.layout = html.Div(className='body', children=[

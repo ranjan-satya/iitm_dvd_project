@@ -98,7 +98,7 @@ def create_fig_for_perception(df_perception):
     )
     return fig
 
-app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+# app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # App layout
 layout = html.Div([
@@ -208,5 +208,5 @@ def register_callbacks(app):
         return fig_perception
 
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+# if __name__ == '__main__':
+#     app.run_server(debug=True)
