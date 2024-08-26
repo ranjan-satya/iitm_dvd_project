@@ -154,7 +154,7 @@ layout = html.Div([
                 'background-color': 'rgba(255, 255, 255, 0.6)',
             },
         ),
-        html.Img(src='/assets/id.png', style={'height': '25px', 'margin-left': '30px','margin-right': '10px', 'margin-bottom': '8px'}),
+        html.Img(src='/assets/man.png', style={'height': '30px', 'margin-left': '30px','margin-right': '10px', 'margin-bottom': '8px'}),
         html.Div(className='content-text', children='Voter Category: ',
             style={'margin-right': '10px', 'padding-bottom': '5px'}),
         dcc.Dropdown(
