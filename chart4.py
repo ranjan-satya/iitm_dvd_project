@@ -184,11 +184,15 @@ layout = html.Div([
         html.Div(className="graph-insight", children=[
             html.Div(className="graph-text-block", children=[
                 html.Div(className="graph-text-bullet", children="\u25CF  "),
-                html.Div(className="graph-text", children="People who have positive perception about Union Leaders are more likely to vote in general, but people who earn more than 75K$ but have studied till High School and have postive perception towards Company leaders are more likely to vote"),
+                html.Div(className="graph-text", children="The number of people who have very good perception about Union Leaders only, exceed the number of people who have good perception about both Company Leaders and Union Leaders."),
             ]),
             html.Div(className="graph-text-block", children=[
                 html.Div(className="graph-text-bullet", children="\u25CF  "),
-                html.Div(className="graph-text", children="Black people who have positive perception about Union Leaders are voting in numbers significantly higher than who have positive perception about Company Leaders"),
+                html.Div(className="graph-text", children="The black people who have a very good perception about the Union leaders and very bad perception about the Company Leaders are significantly higher than the vice versa."),
+            ]),
+            html.Div(className="graph-text-block", children=[
+                html.Div(className="graph-text-bullet", children="\u25CF  "),
+                html.Div(className="graph-text", children="People with high school qualification and more that 75K$ salary have a very goog perception about the Company leaders."),
             ]),
         ])
     ]),

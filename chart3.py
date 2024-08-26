@@ -184,15 +184,11 @@ layout = html.Div([
         html.Div(className="graph-insight", children=[
             html.Div(className="graph-text-block", children=[
                 html.Div(className="graph-text-bullet", children="\u25CF  "),
-                html.Div(className="graph-text", children="More people are showing up in the Presidential Elections than that of Elections for Congress across the years."),
+                html.Div(className="graph-text", children="Voters who think it is very important and very easy to vote are highest in numbers in both type of elections"),
             ]),
             html.Div(className="graph-text-block", children=[
                 html.Div(className="graph-text-bullet", children="\u25CF  "),
-                html.Div(className="graph-text", children="Among the people who think it is very important to vote in order to be good member of the employee community, those who think it is very easy to vote are showing up in large numbers"),
-            ]),
-            html.Div(className="graph-text-block", children=[
-                html.Div(className="graph-text-bullet", children="\u25CF  "),
-                html.Div(className="graph-text", children="Among the people who don't think it is very important to vote in order to be good member of the employee community, those who think it is very easy to vote are showing up in less numbers"),
+                html.Div(className="graph-text", children="Voters who think it is somewhat important and somewhat easy to vote but not willing to vote ever, are the highest."),
             ]),
             
         ])
