@@ -60,11 +60,20 @@ def create_voting_behavior_chart(selected_race=None):
     voting_behavior_dist = filtered_data['Voting Category'].value_counts().reset_index(name='Count')
     voting_behavior_dist = voting_behavior_dist.rename(columns={'index': 'Voting Category'})
 
-    voting_behavior_fig = px.bar(voting_behavior_dist, x='Count', y='Voting Category', orientation='h',
-                                title=f'Voting Behavior{" for " + selected_race if selected_race else ""}',
-                                text=voting_behavior_dist['Count'],
-                                color_discrete_sequence=[color])
-    
+    # Calculate percentages
+    total_count = voting_behavior_dist['Count'].sum()
+    voting_behavior_dist['Percentage'] = (voting_behavior_dist['Count'] / total_count) * 100
+
+    voting_behavior_fig = px.bar(
+        voting_behavior_dist,
+        x='Count',
+        y='Voting Category',
+        orientation='h',
+        title=f'Voting Behavior{" for " + selected_race if selected_race else ""}',
+        text=voting_behavior_dist['Percentage'].apply(lambda x: f"{int(x)}%"), 
+        color_discrete_sequence=[color]
+    )
+
     voting_behavior_fig.update_layout(
         title={
             'y': 0.95,  # Adjust the vertical position of the title
@@ -83,11 +92,10 @@ def create_voting_behavior_chart(selected_race=None):
         ),
         plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to black
         paper_bgcolor='rgba(255, 255, 255, 0)',  # Set paper background color to black
-        font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
+        font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to black
     )
     voting_behavior_fig.update_annotations(font=dict(size=25))
     return voting_behavior_fig
-
 # # Initialize the Dash app
 # app = dash.Dash(__name__)
 
