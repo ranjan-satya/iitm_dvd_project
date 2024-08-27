@@ -62,10 +62,11 @@ def create_fig_for_perception(df_perception):
         y="Perception About Company Leaders",
         size="No. of Voters",
         color="No. of Voters",
-        color_continuous_scale='Portland',
+        color_continuous_scale='Burg',
         log_x=False,
         size_max=60,
         opacity=1,
+        range_color=[0, 900]
     )
 
     # Update layout to change the axis line color and position them at (0,0)

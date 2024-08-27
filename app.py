@@ -43,13 +43,13 @@ app.layout = html.Div(className='body', children=[
                 html.Div(className='index-item', id='link-chart3', children='- Ease of Voting'),
                 html.Div(className='index-item', id='link-chart4', children="- Leaders' Perception"),
             ]),
-            html.Section(className='team-members', children=[
-                html.H2(className='team-title', children='Team Members'),
-                html.Div(className='team-details', children='1. Abel (21f2000265)'),
-                html.Div(className='team-details', children='2. Harshini (21f1005191)'),
-                html.Div(className='team-details', children='3. John Joshi (21f1005544)'),
-                html.Div(className='team-details', children='4. Satya (21f1005375)'),
-            ]),
+            # html.Section(className='team-members', children=[
+            #     html.H2(className='team-title', children='Team Members'),
+            #     html.Div(className='team-details', children='1. Abel (21f2000265)'),
+            #     html.Div(className='team-details', children='2. Harshini (21f1005191)'),
+            #     html.Div(className='team-details', children='3. John Joshi (21f1005544)'),
+            #     html.Div(className='team-details', children='4. Satya (21f1005375)'),
+            # ]),
             html.Section(className='credit-part', children=[
                 html.Img(src='/assets/Plotly-logo.png', className='plotly-logo')
             ])
@@ -82,6 +82,7 @@ def display_page( dataset, chart1, chart2, chart3, chart4):
     default_style = {
         'color': '#000000',
         'border-bottom': '0 #fffc',
+        '-webkit-text-stroke-width': '.2px',
         'border-radius': '8px',
         'padding': '4% 2%',
         'cursor': 'pointer',
@@ -91,7 +92,7 @@ def display_page( dataset, chart1, chart2, chart3, chart4):
     # Active styles for the clicked link
     active_style = {
         'color': '#fff',
-        '-webkit-text-stroke-width': '.3px',
+        '-webkit-text-stroke-width': '.4px',
         'background-color': '#00000066',
         'border-bottom': '0 #fffc',
         'border-radius': '8px',

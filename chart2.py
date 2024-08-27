@@ -152,7 +152,11 @@ horizontal_bar_chart_racism = px.bar(grouped_data_systemic_racism, x='Percentage
                                     text=grouped_data_systemic_racism['Percentage'].apply(lambda x: f'{x:.1f}%'),
                                     color_discrete_sequence=px.colors.qualitative.Pastel)
 
-
+horizontal_bar_chart_racism.update_layout(
+    plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to black
+    paper_bgcolor='rgba(255, 255, 255, 0)',  # Set paper background color to black
+    font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to black
+)
 # # Initialize the Dash app
 # app = dash.Dash(__name__)
 
@@ -162,7 +166,7 @@ layout = html.Div([
 
     # Horizontal Bar Chart: Systemic Racism vs. Election Relevance
     html.Div([
-        dcc.Graph(figure=horizontal_bar_chart_racism, style={'height': '650px',
+        dcc.Graph(figure=horizontal_bar_chart_racism, style={'height': '600px',
                                                             'border-radius': '20px',  # Set the border radius
                                                             'overflow': 'hidden',  # Ensure content is clipped to the border radius
                                                             'background-color': 'rgba(255, 255, 255, 0.4)',  # Set background color for better visibility
