@@ -17,7 +17,7 @@ data = data.rename(columns={
 })
 
 # Prepare data for race distribution
-race_dist = data['Race'].value_counts().reset_index(name='Count')
+race_dist = data['Race'].value_counts().reset_index(name='No. of Voters')
 race_dist = race_dist.rename(columns={'index': 'Race'})
 
 # Create a color map for the races using pastel colors
@@ -32,7 +32,7 @@ color_map = {
 }
 
 # Create donut chart for race distribution with pastel colors
-donut_fig_race = px.pie(race_dist, values='Count', names='Race', hole=.4,
+donut_fig_race = px.pie(race_dist, values='No. of Voters', names='Race', hole=.4,
                         title="Race Distribution", color='Race' ,color_discrete_map=color_map)
 
 donut_fig_race.update_layout(
@@ -57,16 +57,16 @@ def create_voting_behavior_chart(selected_race=None):
         filtered_data = data
         color = '#bfbfbf'  # Default color if no race is selected
 
-    voting_behavior_dist = filtered_data['Voting Category'].value_counts().reset_index(name='Count')
+    voting_behavior_dist = filtered_data['Voting Category'].value_counts().reset_index(name='No. of Voters')
     voting_behavior_dist = voting_behavior_dist.rename(columns={'index': 'Voting Category'})
 
     # Calculate percentages
-    total_count = voting_behavior_dist['Count'].sum()
-    voting_behavior_dist['Percentage'] = (voting_behavior_dist['Count'] / total_count) * 100
+    total_count = voting_behavior_dist['No. of Voters'].sum()
+    voting_behavior_dist['Percentage'] = (voting_behavior_dist['No. of Voters'] / total_count) * 100
 
     voting_behavior_fig = px.bar(
         voting_behavior_dist,
-        x='Count',
+        x='No. of Voters',
         y='Voting Category',
         orientation='h',
         title=f'Voting Behavior{" for " + selected_race if selected_race else ""}',
