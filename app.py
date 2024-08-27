@@ -39,7 +39,7 @@ app.layout = html.Div(className='body', children=[
                 html.H2(className='index-title', children='Content'),
                 html.Div(className='index-item', id='link-dataset', children='- Dataset'),
                 html.Div(className='index-item', id='link-chart1', children='- Voting Behavior'),
-                html.Div(className='index-item', id='link-chart2', children='- Mode of Voting'),
+                html.Div(className='index-item', id='link-chart2', children='- Racial Dynamics'),
                 html.Div(className='index-item', id='link-chart3', children='- Ease of Voting'),
                 html.Div(className='index-item', id='link-chart4', children="- Leaders' Perception"),
             ]),

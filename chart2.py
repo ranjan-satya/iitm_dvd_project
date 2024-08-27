@@ -136,6 +136,23 @@ pie_chart_2.update_layout(title={
                             font=dict(color='black', family='DM Sans, sans-serif', size=16),  # Set text color to white
                         )
 
+# Create the stacked bar chart for Voting in Union Elections vs. Leadership Perception
+grouped_data_voting_leadership = data.groupby(['Race', 'Leadership Perception']).size().reset_index(name='Count')
+grouped_data_voting_leadership['Percentage'] = grouped_data_voting_leadership['Count'] / grouped_data_voting_leadership.groupby('Race')['Count'].transform('sum') * 100
+horizontal_stacked_bar_fig = px.bar(grouped_data_voting_leadership, x='Percentage', y='Race', color='Leadership Perception',
+                                    title='Race vs. Leadership Perception',
+                                    orientation='h', barmode='stack', text=grouped_data_voting_leadership['Percentage'].apply(lambda x: f'{x:.1f}%'),
+                                    color_discrete_sequence=px.colors.qualitative.Pastel)
+
+# Create the horizontal bar chart for Systemic Racism vs. Election Relevance
+grouped_data_systemic_racism = data.groupby(['Race', 'Election Relevance']).size().reset_index(name='Count')
+grouped_data_systemic_racism['Percentage'] = grouped_data_systemic_racism['Count'] / grouped_data_systemic_racism.groupby('Race')['Count'].transform('sum') * 100
+horizontal_bar_chart_racism = px.bar(grouped_data_systemic_racism, x='Percentage', y='Race', color='Election Relevance',
+                                    title='Race vs. Election Relevance', orientation='h',
+                                    text=grouped_data_systemic_racism['Percentage'].apply(lambda x: f'{x:.1f}%'),
+                                    color_discrete_sequence=px.colors.qualitative.Pastel)
+
+
 # # Initialize the Dash app
 # app = dash.Dash(__name__)
 
@@ -145,7 +162,7 @@ layout = html.Div([
 
     # Horizontal Bar Chart: Systemic Racism vs. Election Relevance
     html.Div([
-        dcc.Graph(figure=horizontal_bar_chart_racism, style={'height': '270px',
+        dcc.Graph(figure=horizontal_bar_chart_racism, style={'height': '650px',
                                                             'border-radius': '20px',  # Set the border radius
                                                             'overflow': 'hidden',  # Ensure content is clipped to the border radius
                                                             'background-color': 'rgba(255, 255, 255, 0.4)',  # Set background color for better visibility
@@ -153,15 +170,16 @@ layout = html.Div([
                                                         })
     ]),
 
+
     # Pie Charts for the Last Two Columns
-    html.Div([
-        html.Div([
-            dcc.Graph(figure=pie_chart_1, style={'width': '100%', 'height': '330px'})
-        ], style={'display': 'inline-block', 'width': '45%'}),
-        html.Div([
-            dcc.Graph(figure=pie_chart_2, style={'width': '100%', 'height': '330px'})
-        ], style={'display': 'inline-block', 'width': '45%',})
-    ], style={'display': 'flex', 'justify-content': 'space-between'})
+    # html.Div([
+    #     html.Div([
+    #         dcc.Graph(figure=pie_chart_1, style={'width': '100%', 'height': '330px'})
+    #     ], style={'display': 'inline-block', 'width': '45%'}),
+    #     html.Div([
+    #         dcc.Graph(figure=pie_chart_2, style={'width': '100%', 'height': '330px'})
+    #     ], style={'display': 'inline-block', 'width': '45%',})
+    # ], style={'display': 'flex', 'justify-content': 'space-between'})
 ], style={'padding': '10px', 'font-family': 'Arial', 'overflow': 'hidden'})  # Adjust padding and prevent scrolling
 
 # # Run the app
