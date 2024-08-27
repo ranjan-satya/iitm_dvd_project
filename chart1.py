@@ -70,7 +70,7 @@ def create_voting_behavior_chart(selected_race=None):
         y='Voting Category',
         orientation='h',
         title=f'Voting Behavior{" for " + selected_race if selected_race else ""}',
-        text=voting_behavior_dist['Percentage'].apply(lambda x: f"{int(x)}%"), 
+        text=voting_behavior_dist['Percentage'].round(1).astype(str) + '%',  # Set text to percentage with 2 decimal places
         color_discrete_sequence=[color]
     )
 
